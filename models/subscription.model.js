@@ -30,7 +30,7 @@ Price : [0, 'Price must be greater than 0 ']
  category : {
     type : String,
     required : true,
-    enum : ['entertainment', 'utilities', 'health', 'education', 'other']
+    enum : ['Entertainment', 'Utilities', 'Health', 'Education', 'Other']
 
 
 
@@ -75,7 +75,7 @@ user: {
 
 {timestamps : true});
 
-subscriptionSchema.pre('save', function(next) {
+subscriptionSchema.pre('save', async function () {
     if(!this.renewalDate){
         const renewalPeriods = {
             daily: 1,
@@ -92,6 +92,9 @@ subscriptionSchema.pre('save', function(next) {
     if(this.renewalDate < new Date()){
         this.status = 'inactive';
     } 
-next();
+
 });
+
+const Subscription = mongoose.model("Subscription", subscriptionSchema);
+export default Subscription;
 

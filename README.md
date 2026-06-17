@@ -1,77 +1,77 @@
-🚀 Subscription Tracker API
-A scalable backend API for managing user subscriptions with automated renewal reminders using Upstash Workflow & QStash.
+# 🚀 Subscription Tracker API
 
-Built with Node.js, Express, MongoDB, and Cloud Background Jobs.
+A scalable backend API for managing user subscriptions with automated renewal reminders using **Upstash Workflow & QStash**.
 
-📌 Overview
+Built with **Node.js, Express, MongoDB, and Cloud Background Jobs**.
+
+---
+
+## 📌 Overview
+
 Subscription Tracker is a production-ready REST API that allows users to:
 
-✅ Create and manage subscriptions
-✅ Track renewal dates automatically
-✅ Trigger background reminder workflows
-✅ Secure endpoints with JWT authentication
-✅ Run delayed jobs using Upstash Workflow
-The system is designed with scalable background processing using serverless workflow orchestration.
+- ✅ Create and manage subscriptions
+- ✅ Track renewal dates automatically
+- ✅ Trigger background reminder workflows
+- ✅ Secure endpoints with JWT authentication
+- ✅ Run delayed jobs using Upstash Workflow
 
-🛠 Tech Stack
-Backend
+The system is designed with scalable background processing using **serverless workflow orchestration**.
 
-Node.js
-Express.js
-MongoDB Atlas
-Mongoose ODM
-Authentication
+---
 
-JWT (JSON Web Tokens)
-Protected routes middleware
-Background Jobs
+## 🛠 Tech Stack
 
-Upstash Workflow
-QStash (HTTP-based message queue)
-Delayed execution using sleepUntil
-Dev Tools
+### Backend
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose ODM
 
-Nodemon
-ESLint
-Postman for API testing
-⚙️ Architecture
-text
+### Authentication
+- JWT (JSON Web Tokens)
+- Protected routes middleware
 
-Client Request
-     ↓
-Express API
-     ↓
-MongoDB (Stores Subscription)
-     ↓
-Upstash Workflow Trigger
-     ↓
-Delayed Reminder Execution
+### Background Jobs
+- Upstash Workflow
+- QStash (HTTP-based message queue)
+- Delayed execution using `context.sleepUntil()`
 
+### Dev Tools
+- Nodemon
+- ESLint
+- Postman / Thunder Client
 
+---
 
 The workflow engine schedules reminders at:
 
-7 days before renewal
-5 days before renewal
-2 days before renewal
-1 day before renewal
+- 7 days before renewal
+- 5 days before renewal
+- 2 days before renewal
+- 1 day before renewal
 
+---
 
-🔐 Features
-✅ Authentication
-User registration & login
-JWT-based authorization
-Protected subscription routes
+## 🔐 Features
 
+### ✅ Authentication
+- User registration
+- User login
+- JWT-based authorization
+- Protected subscription routes
 
+### ✅ Subscription Management
+- Create subscription
+- Fetch user subscriptions
+- Auto-calculated renewal date
+- Status tracking (`active`, `expired`, `cancelled`)
 
-✅ Subscription Management
-Create subscription
-Fetch user subscriptions
-Auto-calculated renewal date
-Status tracking (active, expired, cancelled)
-✅ Automated Reminder System
-Workflow triggered upon subscription creation
-Background job scheduling using Upstash
-Delayed execution with context.sleepUntil()
-Idempotent workflow runs
+### ✅ Automated Reminder System
+- Workflow triggered upon subscription creation
+- Background job scheduling using Upstash
+- Delayed execution with `context.sleepUntil()`
+- Idempotent workflow runs
+
+---
+
